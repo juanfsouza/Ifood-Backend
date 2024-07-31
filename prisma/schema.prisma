@@ -1,0 +1,87 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Producer {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  password     String
+  products     Product[]
+  establishment Establishment?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Customer {
+  id         Int       @id @default(autoincrement())
+  name       String
+  email      String    @unique
+  password   String
+  orders     Order[]
+  reviews    Review[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Product {
+  id         Int       @id @default(autoincrement())
+  name       String
+  description String
+  price      Float
+  producer   Producer  @relation(fields: [producerId], references: [id])
+  producerId Int
+  orders     Order[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  Review Review[]
+}
+
+model Establishment {
+  id          Int       @id @default(autoincrement())
+  name        String
+  street      String
+  city        String
+  state       String
+  producer    Producer  @relation(fields: [producerId], references: [id])
+  producerId  Int @unique
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Order {
+  id         Int       @id @default(autoincrement())
+  totalPrice Float
+  customer   Customer  @relation(fields: [customerId], references: [id])
+  customerId Int
+  products   Product[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Review {
+  id         Int       @id @default(autoincrement())
+  rating     Int       @default(0)
+  comment    String?
+  customer   Customer  @relation(fields: [customerId], references: [id])
+  customerId Int
+  product    Product   @relation(fields: [productId], references: [id])
+  productId  Int
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Coupon {
+  id         Int       @id @default(autoincrement())
+  code       String    @unique
+  discount   Float
+  expiresAt  DateTime
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
