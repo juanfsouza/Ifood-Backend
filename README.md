@@ -13,7 +13,7 @@
 - Node.js
 - PostgreSQL
 
-## Class validator & Class transformer ideal para uso:
+## Class validator & Class transformer
 Validação: Usar class-validator é ideal para validação de dados de entrada, como em DTOs (Data Transfer Objects), para garantir que os dados recebidos atendem aos critérios desejados.
 Transformação: Usar class-transformer é útil para converter dados entre formatos e instâncias de classes, especialmente quando você está lidando com entradas de usuários ou dados de APIs externas.
 
