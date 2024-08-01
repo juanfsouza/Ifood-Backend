@@ -35,10 +35,10 @@ Essas ferramentas são especialmente úteis em projetos que utilizam NestJS para
     ```
 
 3. Opcional Configure as variáveis de ambiente:
-    - Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-        ```
-        DATABASE_URL="sua_string_de_conexao_do_postgresql"
-        ```
+- Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+    ```
+    DATABASE_URL="sua_string_de_conexao_do_postgresql"
+    ```
 
 4. Execute as migrações do banco de dados:
     ```sh
