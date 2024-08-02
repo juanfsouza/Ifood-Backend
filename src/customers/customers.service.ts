@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { CreateCustomersDto } from './dto/create-customers.dto';
+import { CreateCustomerDto } from './dto/create-customers.dto';
 
 @Injectable()
 export class CustomersService {
   constructor(private prisma: PrismaService) {}
 
-  async create(data: CreateCustomersDto) {
+  async create(data: CreateCustomerDto) {
     return this.prisma.customer.create({
       data,
     });
@@ -20,7 +20,7 @@ export class CustomersService {
     return this.prisma.customer.findUnique({ where: { id } });
   }
 
-  async update(id: number, data: Partial<CreateCustomersDto>) {
+  async update(id: number, data: Partial<CreateCustomerDto>) {
     return this.prisma.customer.update({
       where: { id },
       data,

@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { HttpExceptionFilter } from '../common/filters/http-exception.filter';
 import { APP_FILTER } from '@nestjs/core';
+import { PrismaService } from './prisma/prisma.service';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { APP_FILTER } from '@nestjs/core';
     AuthModule,
     PrismaModule,
   ],
+  exports: [PrismaService],
   controllers: [AppController],
   providers: [
     AppService,

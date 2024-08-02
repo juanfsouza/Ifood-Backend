@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Put, Post } from '@nestjs/common';
 import { CustomersService } from './customers.service';
-import { CreateCustomersDto } from './dto/create-customers.dto';
+import { CreateCustomerDto } from './dto/create-customers.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('customers')
@@ -11,7 +11,7 @@ export class CustomersController {
     @Post()
     @ApiOperation({ summary: "Create a producer" })
     @ApiResponse({ status: 200, description: 'The producer has been sucessfully created' })
-    create(@Body() createCustomersDto: CreateCustomersDto) {
+    create(@Body() createCustomersDto: CreateCustomerDto) {
         return this.customersService.create(createCustomersDto);
     }
 
@@ -32,7 +32,7 @@ export class CustomersController {
     @Put(':id')
     @ApiOperation({ summary: 'Update a producer by ID' })
     @ApiResponse({ status: 200, description: 'The producer has been successfully updated.' })
-    update(@Param('id') id: string, @Body() updateCustomerDto: Partial<CreateCustomersDto>) {
+    update(@Param('id') id: string, @Body() updateCustomerDto: Partial<CreateCustomerDto>) {
         return this.customersService.update(+id, updateCustomerDto);
     }
 
