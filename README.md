@@ -13,20 +13,16 @@
 - Node.js
 - PostgreSQL
 
-### Ideal para Projeto class-validator & class-transformer:
+## Class validator & Class transformer
+Validação: Usar class-validator é ideal para validação de dados de entrada, como em DTOs (Data Transfer Objects), para garantir que os dados recebidos atendem aos critérios desejados.
+Transformação: Usar class-transformer é útil para converter dados entre formatos e instâncias de classes, especialmente quando você está lidando com entradas de usuários ou dados de APIs externas.
 
-## Validação: Usar class-validator é ideal para validação de dados de entrada, como em DTOs (Data Transfer Objects), para garantir que os dados recebidos atendem aos critérios desejados.
+## No que ajuda?
+Instalar essas bibliotecas é uma boa prática em projetos onde a validação e a transformação de dados são necessárias. Elas são muito usadas em aplicações que seguem boas práticas de desenvolvimento e ajudam a manter o código limpo e gerenciável.
+Essas ferramentas são especialmente úteis em projetos que utilizam NestJS para lidar com validações e transformações de dados de forma eficiente e organizada.
 
-## Transformação: Usar class-transformer é útil para converter dados entre formatos e instâncias de classes, especialmente quando você está lidando com entradas de usuários ou dados de APIs externas.
-
-### No que ajuda?
-## Instalar essas bibliotecas é uma boa prática em projetos onde a validação e a transformação de dados são necessárias. Elas são muito usadas em aplicações que seguem boas práticas de desenvolvimento e ajudam a manter o código limpo e gerenciável.
-
-## Essas ferramentas são especialmente úteis em projetos que utilizam NestJS para lidar com validações e transformações de dados de forma eficiente e organizada.
-
-### Configuração e Execução do Projeto
-
-## Configuração
+## Configuração e Execução do Projeto
+### Configuração
 1. Clone o repositório:
     ```sh
     git clone https://github.com/juanfsouza/Ifood-Backend.git
@@ -39,10 +35,10 @@
     ```
 
 3. Opcional Configure as variáveis de ambiente:
-    - Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-        ```
-        DATABASE_URL="sua_string_de_conexao_do_postgresql"
-        ```
+- Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+    ```
+    DATABASE_URL="sua_string_de_conexao_do_postgresql"
+    ```
 
 4. Execute as migrações do banco de dados:
     ```sh
