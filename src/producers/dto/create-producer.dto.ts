@@ -6,7 +6,7 @@ export class CreateProducerDto {
   name: string;
 
   @ApiProperty({ example: 'producer@example.com', description: 'The email of the producer' })
-  @IsString()
+  @IsEmail()
   email: string;
 
   @ApiProperty({ example: 'password', description: 'The password of the producer' })

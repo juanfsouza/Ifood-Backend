@@ -26,7 +26,7 @@ export class ProducersController {
     @ApiOperation({ summary: 'Get a producer by ID' })
     @ApiResponse({ status: 200, description: 'Return the producer.' })
     findOne(@Param('id') id: string) {
-        return this.producersService.findOne(+id);
+        return this.producersService.findById(+id);
     }
 
     @Put(':id')

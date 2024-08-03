@@ -5,6 +5,7 @@ import { ExtendedPrismaClient } from 'src/prisma-extended';
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
+    console.log('Connecting to database:', process.env.DATABASE_URL);
     await this.$connect();
   }
 
