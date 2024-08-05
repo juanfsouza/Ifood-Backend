@@ -18,7 +18,7 @@ export class CreateEstablishmentDto {
   @IsString()
   state: string;
 
-  @ApiProperty({ example: 'City Name', description: 'The ID of the producer associated with the establishment' })
+  @ApiProperty({ example: 'Id producer', description: 'The ID of the producer associated with the establishment' })
   @IsNumber()
   producerId: number;
   

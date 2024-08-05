@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { EstablishmentsService } from './establishments.service';
 import { CreateEstablishmentDto } from './dto/create-establishment.dto';
 import { UpdateEstablishmentDto } from './dto/update-establishment.dto';
@@ -30,7 +30,7 @@ export class EstablishmentsController {
     return this.establishmentsService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   @ApiOperation({ summary: 'Update an establishment by ID' })
   @ApiResponse({ status: 200, description: 'The establishment has been successfully updated.' })
   update(@Param('id') id: string, @Body() updateEstablishmentDto: UpdateEstablishmentDto) {

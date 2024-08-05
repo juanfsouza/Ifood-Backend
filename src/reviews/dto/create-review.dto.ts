@@ -3,7 +3,7 @@ import { IsString, IsNumber } from 'class-validator';
 
 export class CreateReviewDto {
   @ApiProperty({ example: 5, description: 'The rating given by the customer' })
-  @IsString()
+  @IsNumber()
   rating: number;
 
   @ApiProperty({ example: 'Great product!', description: 'Comment about the product' })

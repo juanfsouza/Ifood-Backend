@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, MinLength, IsNumber } from 'class-validator';
+import { IsString, IsNumber, Min } from 'class-validator';
 
 export class CreateProductDto {
   @ApiProperty({ example: 'Pizza', description: 'The name of the product' })
@@ -12,7 +12,7 @@ export class CreateProductDto {
 
   @ApiProperty({ example: 19.99, description: 'The price of the product' })
   @IsNumber()
-  @MinLength(6)
+  @Min(0)
   price: number;
 
   @ApiProperty({ example: 1, description: 'The ID of the producer' })

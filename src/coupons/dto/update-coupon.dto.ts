@@ -1,19 +1,24 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsString, IsDate, IsNumber, IsOptional } from 'class-validator';
+import { IsString, IsDateString, IsNumber, IsOptional, IsInt } from 'class-validator';
 
 export class UpdateCouponDto {
-  @ApiPropertyOptional({ example: 'Coupon get 10.00 off', description: 'The updated code of the coupon' })
+  @ApiPropertyOptional({ example: 'COUPON2024', description: 'The updated code of the coupon' })
   @IsString()
   @IsOptional()
   code?: string;
 
-  @ApiPropertyOptional({ example: '10.00 off', description: 'The updated discount value of the coupon' })
+  @ApiPropertyOptional({ example: 10.00, description: 'The updated discount value of the coupon' })
   @IsNumber()
   @IsOptional()
   discount?: number;
 
-  @ApiPropertyOptional({ example: 'Until day 21', description: 'The updated expiration date of the coupon' })
-  @IsDate()
+  @ApiPropertyOptional({ example: '2024-08-21T00:00:00Z', description: 'The updated expiration date of the coupon' })
+  @IsDateString()
   @IsOptional()
-  expiresAt?: Date;
+  expiresAt?: string;
+
+  @ApiPropertyOptional({ example: 1, description: 'The updated ID of the product associated with the coupon' })
+  @IsOptional()
+  @IsInt()
+  productId?: number;
 }

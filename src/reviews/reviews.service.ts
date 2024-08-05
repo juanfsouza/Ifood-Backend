@@ -1,33 +1,70 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateReviewDto } from './dto/create-review.dto';
+import { UpdateReviewDto } from './dto/update-review.dto';
 
 @Injectable()
 export class ReviewsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
-  async create(data: CreateReviewDto) {
+  async create(createReviewDto: CreateReviewDto) {
     return this.prisma.review.create({
-      data,
+      data: {
+        rating: createReviewDto.rating,
+        comment: createReviewDto.comment,
+        customerId: createReviewDto.customerId,
+        productId: createReviewDto.productId,
+      },
     });
   }
 
   async findAll() {
-    return this.prisma.review.findMany();
+    return this.prisma.review.findMany({
+      include: {
+        customer: true,
+        product: true,
+      },
+    });
   }
 
   async findOne(id: number) {
-    return this.prisma.review.findUnique({ where: { id } });
+    const review = await this.prisma.review.findUnique({
+      where: { id },
+      include: {
+        customer: true,
+        product: true,
+      },
+    });
+    if (!review) {
+      throw new NotFoundException(`Review with ID ${id} not found`);
+    }
+    return review;
   }
 
-  async update(id: number, data: Partial<CreateReviewDto>) {
+  async update(id: number, updateReviewDto: UpdateReviewDto) {
+    const review = await this.prisma.review.findUnique({
+      where: { id },
+    });
+    if (!review) {
+      throw new NotFoundException(`Review with ID ${id} not found`);
+    }
     return this.prisma.review.update({
       where: { id },
-      data,
+      data: {
+        ...updateReviewDto,
+      },
     });
   }
 
   async remove(id: number) {
-    return this.prisma.review.delete({ where: { id } });
+    const review = await this.prisma.review.findUnique({
+      where: { id },
+    });
+    if (!review) {
+      throw new NotFoundException(`Review with ID ${id} not found`);
+    }
+    return this.prisma.review.delete({
+      where: { id },
+    });
   }
 }

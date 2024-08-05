@@ -41,6 +41,8 @@ model Product {
   updatedAt  DateTime  @updatedAt
 
   Review Review[]
+
+  Coupon Coupon[]
 }
 
 model Establishment {
@@ -82,6 +84,9 @@ model Coupon {
   code       String    @unique
   discount   Float
   expiresAt  DateTime
+  product    Product?  @relation(fields: [productId], references: [id])
+  productId  Int?      
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
 }
+
