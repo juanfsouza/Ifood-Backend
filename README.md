@@ -6,7 +6,7 @@
 
 </div>
 
-Projeto e desenvolver um sistema parecido com ifood aonde tem client e produtor que vai vender seu produto para cliente, basicamente produtor ele tem acesso a criar seu produtos, estabelicimento e coupons de desconto para os cliente e o cliente pode criar seu orders de qual produto vai comprar e tambem pode usar coupons para ter descontos.
+Projeto e desenvolver um sistema parecido com ifood aonde tem cliente e produtor que vai vender seu produto para cliente, basicamente produtor ele tem acesso a criar seu produtos, estabelicimento e coupons de desconto para os cliente e o cliente pode criar seu orders de qual produto vai comprar e tambem pode usar coupons para ter descontos.
 
 ## Decisões Tomadas
 - **NestJS:** Utilizado por sua arquitetura modular e suporte a TypeScript.
