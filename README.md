@@ -203,6 +203,8 @@ Essas ferramentas são especialmente úteis em projetos que utilizam NestJS para
     ```
 - **Endpoint:** `DELETE /establishments/{id}`
 
+## Teste com Jest foram implementados em todas rotas.
+
 ![Screenshot_4](https://github.com/user-attachments/assets/ba4fa252-46a4-4763-9229-dfb257e42302)
 
 ## Considerações Finais
