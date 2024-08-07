@@ -202,15 +202,15 @@ Essas ferramentas são especialmente úteis em projetos que utilizam NestJS para
     }
     ```
 - **Endpoint:** `DELETE /establishments/{id}`
-
-## Teste com Jest foram implementados em todas rotas.
+- 
 
 ![Screenshot_4](https://github.com/user-attachments/assets/ba4fa252-46a4-4763-9229-dfb257e42302)
 
 ## Considerações Finais
 - **Qualidade do Código:** Segui boas práticas de programação, incluindo Clean Code e Clean Architecture.
 - **Documentação:** Esta documentação cobre todas as funcionalidades e explica como configurar e utilizar a API.
-- **Api:** Essa api foi desenvolvida com intesão de criar algo parecido com sistema do ifood
+- **Teste com Jest foram implementados em todas rotas.
+- **Api:** Essa api foi desenvolvida com intesão de criar algo parecido com sistema do ifood.
 
 ## INSOMNIA - json com todos endpoints prontos
 - ** Link: https://drive.google.com/file/d/1LVyjG_YIAy-C4z3b_XhH239YlaXCxQHC/view?usp=sharing
