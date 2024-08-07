@@ -1,6 +1,6 @@
 <div align="center">
     
-# Ifood Plataform
+# IFOOD PLATAFORM
 
 ![Screenshot_4](https://github.com/user-attachments/assets/d9c7aa41-e9e7-41ca-a7f1-b8ebcf578d9e)
 
